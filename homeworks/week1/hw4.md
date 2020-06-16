@@ -77,9 +77,11 @@
 
 `checkout` 警察臨檢，把所有東西都拿出來給我檢查！
 * 可用來查看任何版本的內容
-* 輸入 `git checkout <版本號碼> `：切換到任何 commit 過的版本
-* 輸入 `git checkout master`：切換回最新版本
-* 輸入 `git checkout <branch_name>`：切換到任何 branch 
+* 在沒有其他 **branch** 的情況下
+  * 輸入 `git checkout <版本號碼> `：切換到任何 commit 過的版本
+  * 輸入 `git checkout master`：切換回最新版本 
+* 若是有新增 **branch** 
+  * 輸入 `git checkout <branch_name>`：切換到任何 branch 
 
 `.gitignore` 忽略不需要版本控制的檔案
 * 前面提到在提交 `commit` 之前，Git 會要求輸入 `git add <檔案名稱>` 將修正過的檔案加入版本控制。但是如果我真的有些檔案不想要加入版本控制呢。
