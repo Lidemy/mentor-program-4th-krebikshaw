@@ -19,11 +19,11 @@ function solve(lines) {
   const n = Number(lines[0].split(' ')[0]);
   const m = Number(lines[0].split(' ')[1]);
   for (let i = n; i <= m; i++) {
-    if (NarcissisticNumber(i)) console.log(i);
+    if (isNarcissisticNumber(i)) console.log(i);
   }
 }
 
-function NarcissisticNumber(n) {
+function isNarcissisticNumber(n) {
   const str = n.toString();
   const times = str.length;
   let sum = 0;
