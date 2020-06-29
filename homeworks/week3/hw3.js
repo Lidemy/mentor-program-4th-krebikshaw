@@ -18,12 +18,12 @@ rl.on('close', () => {
 function solve(lines) {
   const N = Number(lines[0]);
   for (let i = 1; i <= N; i++) {
-    if (Prime(Number(lines[i]))) console.log('Prime');
+    if (isPrime(Number(lines[i]))) console.log('Prime');
     else console.log('Composite');
   }
 }
 
-function Prime(n) {
+function isPrime(n) {
   if (n === 1) return false;
   for (let i = 2; i < n; i++) {
     if (n % i === 0) return false;
