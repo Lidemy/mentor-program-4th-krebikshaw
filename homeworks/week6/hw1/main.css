@@ -133,7 +133,7 @@ h2 {
   color: #3e613d;
 }
 
-.btn-order {
+.btn__order {
   padding: 30px 50px;
   background: #a8e8e1;
   box-shadow: 0.1px 0.1px 0px 0.3px black;
@@ -141,7 +141,7 @@ h2 {
   cursor: pointer;
 }
 
-.btn-query {
+.btn__query {
   padding: 30px 50px;
   background: #f9f9b5;
   box-shadow: 0.1px 0.1px 0px 0.3px black;
@@ -149,12 +149,12 @@ h2 {
   cursor: pointer;
 }
 
-.btn-order:hover {
+.btn__order:hover {
   background: #81e2d8;
   box-shadow: -0.1px -0.1px 0px 0.3px black;
 }
 
-.btn-query:hover {
+.btn__query:hover {
   background: #fbfb8d;
   box-shadow: -0.1px -0.1px 0px 0.3px black;
 }
