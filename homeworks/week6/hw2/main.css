@@ -1,0 +1,153 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e2f3ce;
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+
+/* banner */
+.banner {
+  background: url(https://lh4.googleusercontent.com/sAvtic6WzLRcGC485d2irc6Q36VS9GaiIj2TjL9AkbD1t3RjwacfNkJmmUe9fh9c0WV-ZVKQcw=w1200) center/cover no-repeat;
+  height: 270px;
+}
+
+/* main */
+.main {
+  padding:0 20px;
+}
+
+.main__inner {
+  background: #ffffff;
+  max-width: 640px;
+  padding: 15px;
+  margin: -100px auto 50px auto;
+  border-top: 8px solid rgba(255, 137, 75);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+
+/* section__header */
+.summary {
+  padding: 0 20px;
+}
+
+.summary__title {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.summary p {
+  font-size: 12px;
+}
+
+.summary__strong {
+  color: #d93025;
+  margin: 20px 0 30px 0;
+}
+
+/* section__form */
+ul {
+  padding: 0;
+}
+
+.form li {
+  list-style-type: none;
+  padding: 0 20px;
+  margin-bottom: 15px;
+}
+
+.form__item input, .form__item h4, .form__item button {
+  display: block;
+}
+
+.form__item[data-check="true"] h4::after {
+  content: '*';
+  color: #d93025;
+  font-size: 22px;
+  margin-left: 5px;
+}
+
+.form__item span {
+  font-size: 12px;
+  position: relative;
+  top: -15px;
+}
+
+.form__item input {
+  border: none;
+  margin-bottom: 20px;
+  height: 25px;
+  width: 100%;
+  border-bottom: 2px solid #eee;
+  background: none;
+  border-radius: 0;
+}
+
+.form__item input:focus {
+  outline: none;
+  border-bottom: 2px solid #d93025;
+}
+
+.form__item .input__half {
+  width: 60%;
+}
+
+.form__item input::placeholder {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.form__radio {
+  display: flex;
+  align-items: center;
+}
+
+.form__radio input[type="radio"] {
+  height: 20px;
+  width: 20px;
+  margin: 10px 10px 10px 0;
+}
+
+.form__radio label {
+  width: 500px;
+  margin: 15px 5px;
+}
+
+.btn__submit {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 3px;
+  border: none;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.btn__submit:hover {
+  background: #1a73e8db;
+  box-shadow: 0 0 0 0.3px rgba(0,0,0,0.5);
+}
+
+.btn__submit + span {
+  top: -5px; 
+  color: #3a3535;
+}
+
+.footer {
+  height: 50px;
+  padding: 20px 30px;
+  background: #50a9a0;
+  display: flex;
+  align-items: center;
+}
+
+.footer p {
+  position: relative;
+  font-size: 12px;
+  color: #ffffff;
+  margin: 0 auto;
+}
