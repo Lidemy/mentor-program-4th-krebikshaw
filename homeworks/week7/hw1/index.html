@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://necolas.github.io/normalize.css/latest/normalize.css" rel="stylesheet">
+  <link href="./main.css" rel="stylesheet">
+  
+  <title>week6-hw2|by krebikshaw</title>
+</head>
+<body>
+  <header class="banner"></header>
+  <div class="main">
+  	<div class="main__inner">
+  	  <section class="summary">
+  	    <h1 class="summary__title">新拖延病患治療記錄表</h1>	
+  	    <p>治療日期：2020/12/10 ~ 2020/12/11</p>
+  	    <p>治療地點：台北市大安區新生南路二段1號</p>
+  	    <p class="summary__strong">*必填</p>  
+  	  </section>
+  	  <section class="form">
+  	    <form action="" novalidate="">
+  	      <ul>
+  	        <li class="form__item" data-check="true">
+  	          <h4>患者名稱</h4>
+  	          <span>請填上病患大名</span>
+  	          <input type="text" name="nickname" id="nickname" class="input__half" placeholder="快點填，不要再拖了！" required="">	
+  	        </li>
+  	        <li class="form__item" data-check="true">
+  	          <h4>患者電子郵件</h4>
+  	          <span></span>
+  	          <input type="email" name="email" id="email" class="input__half" placeholder="題目很多！寫快點" required="">	
+  	        </li>
+  	        <li class="form__item" data-check="true">
+  	          <h4>患者手機號碼</h4>
+  	          <span>為避免患者拖延症狀過重，請填寫正確手機資訊，方可致電提醒服藥</span>
+  	          <input type="tel" name="cellphone" id="cellphone" class="input__half" placeholder="很好，你寫完一半了" required="">	
+  	        </li>
+  	        <li class="form__item" data-check="true">
+  	          <h4>患者治療類型</h4>
+  	          <span>請選擇您的治療需求</span>
+  	          <div class="form__radio">
+  	            <input type="radio" name="treatType" id="positive"><label for="positive">從零治療到好(過程極度痛苦，目標是根治您的拖延症狀，6 個月內沒治好，需加收 5000 萬診療費，用金錢壓力改善您的症狀。)</label>
+  	          </div>
+  	          <div class="form__radio">
+  	            <input type="radio" name="treatType" id="negative"><label for="negative">佛系治療法(不保證能根治，不強迫你做任何你應該做的事，順其自然，相信總有一天會好。)</label>	
+  	          </div>
+  	        </li>
+  	        <li class="form__item" data-check="true">
+  	          <h4>怎麼知道這個療程的</h4>
+  	          <input type="text" name="from" id="from" placeholder="2020 快過完了！你填好了沒？" required="">	
+  	        </li>
+  	        <li class="form__item">
+  	          <h4>其他</h4>
+  	          <span>病患還想說什麼</span>
+  	          <input type="text" name="others" id="others" placeholder="非常棒，這是最後一題了。">	
+  	        </li>
+  	        <li class="form__item">
+  	        	<button type="submit" class="btn__submit" value="No validate submit">提交</button>
+  	        	<span>請不要再拖延了，儘速提交表單，謝謝！</span>
+  	        </li>
+  	      </ul>
+  	    </form>		
+  	  </section>
+  	</div>
+  </div>
+  <footer class="footer">
+    <p>請正視拖延問題，有症狀須立即治療</p>
+  </footer>
+  <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
