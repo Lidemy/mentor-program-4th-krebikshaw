@@ -1,0 +1,276 @@
+body {
+  background: #f7e871;
+}
+
+/* Navbar */
+.nav__wrapper {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  background: white;
+  top: 0px;
+  margin: auto;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0 ;
+}
+
+.nav__site__name {
+  font-size: 24px;
+  color: #489846;
+  padding: 26px;
+  margin-left: 30px;
+  text-shadow: 0 0 0.5px #3b563a;
+}
+
+.nav__site__list {
+  display: flex;
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+.nav__site__list a {
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  padding: 12px 24px;
+  color: #010101;
+  text-decoration: none;
+  margin-right: 6px;
+  transition: background 0.1s ease-in-out;
+}
+
+.nav__site__list a.active, .nav__site__list a:hover {
+  background: #ff7286;
+  border-radius: 5px;
+  box-shadow: 0 0 0 0.2px #010101;
+  color: #fefefe;
+}
+
+
+/* content */
+.main {
+  background: #e0dddd;
+  display: flex;
+  justify-content: center;
+}
+
+.main__inner {
+  max-width: 900px;
+  background: #ffffff;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5); 
+}
+
+h2 {
+  font-family: MicrosoftJhengHei;
+  font-size: 24px;
+  font-weight: bold;
+  display: inline-block;
+  border-left: 10px solid #a3dea2;
+  padding-left: 20px;
+  margin: 30px 0px 5px 30px;
+  text-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+ 
+.list .first__line {
+  display: flex;
+  align-items: center;
+}
+
+.list li {
+  position: relative;
+  list-style-type: none;
+  margin: 15px 50px 15px 0;
+  border-bottom: 1px solid #a3dea2;
+}
+
+.list li:hover {
+  text-shadow: 0 0 0.5px rgba(0,0,0,0.5);
+  border-bottom: 1px solid #489846;
+}
+
+.question__number {
+  position: absolute;
+  top: 0;
+  width: 35px;
+  height: 21px;
+  font-family: Questrial;
+  font-size: 24px;
+  letter-spacing: 0.22px;
+  text-align: left;
+  color: #70b282;
+  padding-bottom: 10px;
+}
+
+.question__text {
+  margin: 1px 20px 15px 55px;
+  font-family: MicrosoftJhengHei;
+  font-size: 18px;
+  letter-spacing: 0.16px;
+  text-align: left;
+  color: #000000;
+}
+
+.answer__text {
+  position: relative;
+  padding-left: 35px;
+  font-family: MicrosoftJhengHei;
+  font-size: 15px;
+  letter-spacing: 0.14px;
+  text-align: left;
+  color: #03a9f4;
+  margin: 0px 20px 15px 20px;
+  transition: transform 1s;
+  animation-name: switch;
+  animation-duration: 0.3s;
+}
+
+.answer__text.hide {
+  /*position: absolute;*/
+  top: 0;
+  display: none;
+}
+
+@keyframes switch {
+  from {
+    top: -30px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+/* connect */
+
+.connect {
+  text-align: center;
+  height: 150px;
+}
+
+.connect__title {
+  font-family: MicrosoftJhengHei;
+  margin: 40px auto;
+  font-size: 24px;
+}
+
+.connect a {
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  padding: 12px 24px;
+  color: #010101;
+  text-decoration: none;
+  margin-right: 6px;
+  transition: background 0.1s ease-in-out;
+  background: rgba(0,0,0,0);
+  border: 1px solid #396545;
+  border-radius: 5px;
+  box-shadow: 0 0 0 0.2px #010101;
+  color: #396545;
+}
+
+.connect a:hover {
+  background: #a3dea2;
+  border: 1px solid #396545;
+  color: #396545;
+}
+
+/* footer */
+footer {
+  background: #e8efee;
+}
+
+.footer__top {
+  background: #e8efee;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: auto;
+  padding: 20px 14px 10px 14px;
+}
+
+.footer__info div {
+  padding: 5px;
+  margin:0 15px;
+  line-height: 1.2em;
+}
+
+.footer__site {
+  font-family: Questrial;
+}
+
+.footer__site h3 {
+  color: #489846;
+  font-size: 24px;
+}
+
+.footer__site p {
+  color: #484848;
+  font-size: 12px;
+  margin-top: -15px; 
+}
+
+.footer__bottom {
+  text-align: center;
+  background: #35564b;
+  padding: 12px;
+  font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+/* Navbar */
+  .nav__wrapper{
+    height: 100px;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+  }
+
+  .nav__site__name {
+    padding: 12px;
+    margin: 0 0 -60px 0;   
+  }
+
+  .nav__site__list a {
+    font-size: 8px;   
+    padding: 4px 4px;
+  }
+
+/* main */
+.title {
+  font-size: 12px;
+  margin: 20px -5px 0 2px;
+}
+
+
+
+/* footer */
+  .footer__top {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .footer__site {
+    padding-inline-start: inherit; 
+  }
+
+  .list {
+    margin-left: -10px;
+  }
+}

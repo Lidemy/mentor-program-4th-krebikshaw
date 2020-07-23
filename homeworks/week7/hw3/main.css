@@ -1,0 +1,123 @@
+body, html, h2, input, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e3e7f5;
+}
+
+/* main */
+.main {
+  background: #e3e7f5;
+  display: flex;
+  justify-content: center;
+}
+
+.main__inner {
+  background: #dbf0f3;
+  width: 600px;
+  height: 700px;
+  text-align: center;
+  margin: 20px 5px;
+  border-radius: 15px;
+  box-shadow: 0 0 1.4px 0.1px rgba(0,0,0,0.5);
+}
+
+/* text */
+.title {
+  font-family: fantasy;
+  font-size: 36px;
+  color: #1a5975;
+  margin: 50px auto 10px auto;
+}
+
+.main__inner > input {
+  border: none;
+  width: 80%;
+  margin-bottom: 20px;
+  height: 35px;
+  background: none;
+  border-bottom: 1px solid #b5daea;
+  border-radius: 0;
+  transition: border-bottom 0.5s;
+  transition-duration: ease-in-out;
+}
+
+.main__inner > input:hover {
+  border-bottom: 2px solid #2896c7;
+}
+
+.main__inner > input::placeholder {
+  font-family: fantasy;
+  letter-spacing: 0.2em;
+  color: #2896c7;
+}
+
+.main__inner > input:focus {
+  outline: none;
+  border-bottom: 2px solid #2896c7;
+}
+
+/* content */
+.list {
+  margin: 30px 30px;
+}
+
+.list li {
+  position: relative;
+  font-family: fantasy;
+  font-size: 24px;
+  color: #1a5975;
+  letter-spacing: 0.2em;
+  list-style-type: none;
+  text-align: left;
+  padding: 0 30px;
+  margin-bottom: 35px;
+  display: flex;
+}
+
+.list li:hover {
+  text-shadow: 0 0 0.5px rgba(0,0,0,1);
+}
+
+.list .btn__delete {
+  position: absolute;
+  right: 30px;
+  top: 2px;
+  border: none;
+  outline: none;
+  background: url(./svg/delete.svg) center/cover no-repeat;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.list li input[type="checkbox"] {
+  display: none;
+}
+
+.list li input[type="checkbox"] + label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.list li input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+.list li input[type="checkbox"] + label span {
+  width: 20px;
+  height: 20px;
+  background: url(./svg/unchecked.svg) center/cover no-repeat;
+  cursor: pointer;
+  margin: 0 25px 7.5px 0;
+}
+
+.list li input[type="checkbox"]:checked + label span {
+  background: url(./svg/checked.svg) center/cover no-repeat;
+  margin-right: 30px;
+}
+
+
