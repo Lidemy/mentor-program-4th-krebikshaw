@@ -15,7 +15,7 @@ function creatTodo(value) {
   element__li.setAttribute('data-value', `${num}`);
   element__li.innerHTML = `
     <input type="checkbox" id="cb__${num}">
-    <label for="cb__${num}"><span></span>${value}
+    <label for="cb__${num}"><span></span>${escapeHtml(value)}
     <input type="button" class="btn__delete" data-value="${num}">
   `;
   list.appendChild(element__li);
@@ -35,6 +35,15 @@ function deleteTodo(value, checked) {
     return;
   }
   alert('🙅‍  請先完成事項再刪除唷！');
+}
+
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 keydown.addEventListener('keydown', (e) => {
