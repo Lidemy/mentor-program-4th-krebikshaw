@@ -1,0 +1,388 @@
+body {
+  background: #f7e871;
+}
+
+ul, li, h1, h2, h3, p {
+  padding: 0;
+  margin: 0;
+}
+
+/* Navbar */
+.nav__wrapper {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  background: white;
+  top: 0px;
+  margin: auto;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0 ;
+}
+
+.nav__site__name {
+  font-size: 24px;
+  color: #489846;
+  padding: 26px;
+  margin-left: 30px;
+  text-shadow: 0 0 0.5px #3b563a;
+}
+
+.nav__site__list {
+  display: flex;
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+.nav__site__list a {
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  padding: 12px 24px;
+  color: #010101;
+  text-decoration: none;
+  margin-right: 6px;
+  transition: background 0.1s ease-in-out;
+}
+
+.nav__site__list a.active, .nav__site__list a:hover {
+  background: #ff7286;
+  border-radius: 5px;
+  box-shadow: 0 0 0 0.2px #010101;
+  color: #fefefe;
+}
+
+
+/* content */
+.main {
+  background: url(./photo/games-bn.jpg) center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  height: 700px;
+}
+
+.main__inner {
+  max-width: 400px;
+  height: 480px;
+  background: #ffffff;
+  margin: 80px 20px;
+  text-align: center;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5); 
+  border-radius: 15px;
+  padding: 20px;
+}
+
+h2 {
+  width: 379px;
+  height: 22px;
+  font-family: MicrosoftJhengHei;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px auto;
+  color: #5ec1b6;
+}
+
+.list li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 25px auto;
+}
+
+.list li h3 {
+  width: 120px;
+  height: 18px;
+  font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  text-align: left;
+  color: #322929;
+  margin: 5px 10px 5px 20px;
+}
+
+.list li p {
+  width: 350px;
+  font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  color: #322929;
+  text-align: left;
+  margin-right: 30px;
+}
+
+.list li + li h3 {
+  padding-bottom: 60px;
+}
+
+.list li:nth-child(3) {
+  transform: translateY(-25px);
+}
+
+.list li:nth-child(3) h3 {
+  transform: translateY(-45px);
+}
+
+.prize__list li{
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.prize__list li div {
+  width: 120px;
+  transform: translateY(-8px);
+  margin-left: -25px;
+}
+
+.prize__list li p {
+  width: 170px;
+  margin-left: -10px;
+}
+
+.prize__list li:nth-child(3) {
+  transform: translateY(0px);
+}
+
+/* btn__lottery */
+.btn__lottery {
+  width: 160px;
+  height: 55px;
+  background: #ff7286;
+  border: 1px solid #396545;
+  border-radius: 8px;
+  color: #fefefe; 
+  cursor: pointer;
+  transform: translateY(-45px);
+  transition: background 0.2s;
+}
+
+.btn__lottery:hover {
+  border: 1px solid #396545;
+  background: #f15067;
+  box-shadow: 0 0 -2px 0 rgba(0,0,0,0.8);
+}
+/* connect */
+
+.connect {
+  text-align: center;
+  height: 150px;
+}
+
+.connect__title {
+  font-family: MicrosoftJhengHei;
+  margin: 40px auto;
+  font-size: 24px;
+}
+
+.connect a {
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  padding: 12px 24px;
+  text-decoration: none;
+  margin-right: 6px;
+  transition: background 0.1s ease-in-out;
+  background: rgba(0,0,0,0);
+  border: 1px solid #396545;
+  border-radius: 5px;
+  box-shadow: 0 0 0 0.2px #010101;
+  color: #396545;
+}
+
+.connect a:hover {
+  background: #a3dea2;
+  border: 1px solid #396545;
+  color: #396545;
+}
+
+/* footer */
+footer {
+  background: #e8efee;
+}
+
+.footer__top {
+  background: #e8efee;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: auto;
+  padding: 20px 14px 10px 14px;
+}
+
+.footer__info div {
+  padding: 5px;
+  margin:0 15px;
+  line-height: 1.2em;
+}
+
+.footer__site {
+  font-family: Questrial;
+}
+
+.footer__site h3 {
+  color: #489846;
+  font-size: 24px;
+}
+
+.footer__site p {
+  color: #484848;
+  font-size: 12px;
+  margin-top: 5px; 
+}
+
+.footer__bottom {
+  text-align: center;
+  background: #35564b;
+  padding: 12px;
+  font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* 動態處理 */
+
+.hide {
+  display: none;
+}
+
+.lottery__result {
+  position: relative;
+  height: 700px;
+  width: 100%;
+  text-align: center;
+}  
+
+.first__prize {
+  background: url(./photo/plane.jpg) center/cover no-repeat;
+}
+
+.second__prize {
+  background: url(./photo/tv.jpg) center/cover no-repeat;
+}
+
+.third__prize {
+  background: url(./photo/youtube.jpg) center/cover no-repeat;
+}
+
+.none__prize {
+  background: rgba(0,0,0,0.8);
+}
+
+.first__prize::after, .second__prize::after, .third__prize::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.lottery__result h2 {
+  width: 80%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0,0,0,1);
+  z-index: 1;
+}
+
+.third__prize h2 {
+  font-size: 32px;
+}
+
+.lottery__result input {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-family: MicrosoftJhengHei;
+  font-size: 18px;
+  padding: 12px 24px;
+  text-decoration: none;
+  transition: background 0.1s ease-in-out;
+  background: #8080806e;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 0 0.2px #010101;
+  color: #ffffff;
+}
+
+.lottery__result input:hover {
+  background: #1312127d;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+/* Navbar */
+  .nav__wrapper{
+    height: 100px;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+  }
+
+  .nav__site__name {
+    padding: 12px;
+    margin: 0 0 -90px 0;   
+  }
+
+  .nav__site__list {
+    transform: translateY(-30px);
+  }
+
+  .nav__site__list a {
+    font-size: 8px;   
+    padding: 4px 4px;
+  }
+
+/* main */
+h2, h3, p, div{
+  font-size: 8px;
+}
+
+.title {
+  font-size: 12px;
+  margin: 20px -5px 0 2px;
+}
+
+.main__inner {
+  width: 90%;
+}
+
+.main__inner h2 {
+  text-align: center;
+}
+
+/* footer */
+  .footer__top {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .footer__site {
+    padding-inline-start: inherit; 
+  }
+
+  .list {
+    margin-left: -10px;
+  }
+
+  .first__prize h2, .second__prize h2, .third__prize h2 {
+    font-size: 28px;
+  }
+}
