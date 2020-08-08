@@ -87,8 +87,6 @@ node hw2.js update 1 "new name" // 更新 id 為 1 的書名為 new name
 3. 使用的貨幣名稱
 4. 電話國碼
 
-請參考以下範例：
-
 ``` js
 node hw3.js tai
 
