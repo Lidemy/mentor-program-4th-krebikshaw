@@ -1,5 +1,9 @@
 # 作業
 
+## 備註
+
+請注意！API 每一天會重置一次，在一天當中你做的任何操作都會影響到其他同學。如果你發現有些 id 不見了，那就是被其他同學刪掉了。建議大家要測試刪除功能時，可以先試著新增資料，然後再刪除自己剛剛新增的，才不會影響到其他人，感謝！
+
 ## API 文件
 
 Base URL: https://lidemy-book-store.herokuapp.com
@@ -82,8 +86,6 @@ node hw2.js update 1 "new name" // 更新 id 為 1 的書名為 new name
 2. 首都
 3. 使用的貨幣名稱
 4. 電話國碼
-
-請參考以下範例：
 
 ``` js
 node hw3.js tai
