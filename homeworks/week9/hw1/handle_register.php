@@ -2,19 +2,23 @@
   session_start();
   require_once('conn.php');
 
+  $nickname = trim($_POST['nickname']);
+  $username = trim($_POST['username']);
+  $password = trim($_POST['password']);
+
   if (
-    empty($_POST['nickname']) ||
-    empty($_POST['username']) ||
-    empty($_POST['password'])
+    empty($nickname) ||
+    empty($username) ||
+    empty($password)
   ) {
     header("Location: register.php?errCode=1");
     die();
   }
 
   $sql = sprintf("insert into krebikshaw_users(nickname, username, password) values('%s', '%s', '%s')",
-    $_POST['nickname'],
-    $_POST['username'],
-    $_POST['password']
+    $nickname,
+    $username,
+    $password
   );
 
   $db->sqlQuery($sql);

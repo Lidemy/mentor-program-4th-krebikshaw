@@ -285,6 +285,8 @@ form input[type='submit']:hover {
 	padding: 3px;
 	margin: 0 5px 0 10px;
 	white-space: break-spaces;
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
 /* Top button */
