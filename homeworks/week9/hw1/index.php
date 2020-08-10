@@ -83,7 +83,7 @@
                 </div>
                 <div>
                   <div class="author">
-                    <span><?php echo htmlspecialchars($row['nickname']); ?></span>
+                    <span class="nickname"><?php echo htmlspecialchars($row['nickname']); ?></span>
                     <span><?php echo $row['created_at']; ?></span>
                   </div>
                   <p><?php echo htmlspecialchars($row['comment']); ?></p>
