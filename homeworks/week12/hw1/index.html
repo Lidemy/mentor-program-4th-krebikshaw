@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>week12-hw1|by krebikshaw</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body class="bg-light">
+  <form class="add_comment_form" method="post">
+    <div class="container">
+      <div class="row">
+        <div class="input-group mb-3 mt-5 col-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-info text-white shadow-sm" id="basic-addon1">暱稱</span>
+          </div>
+          <input type="text" name="nickname" class="form-control border-info shadow-sm" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-group col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text bg-info text-white shadow-sm">留言</span>
+          </div>
+          <textarea name="content" class="form-control border-info shadow-sm" aria-label="With textarea"></textarea>
+        </div>
+        <div class="col-2">
+          <input type="submit" class="btn btn-info mt-3 shadow-sm"/>
+        </div>
+      </div>
+      <hr class="mt-5 mb-5 bg-info">
+    </div>
+  </form>
+  <div class="container comments">
+
+  </div>
+  <script type="text/javascript">
+    let siteKey = "site_01";
+    let LoadMoreButtonHtml = "<button class='btn load_more btn-info'>載入更多</button>";
+    let currentId = null;
+
+    function escape(string) {
+      const map = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#x27;',
+          "/": '&#x2F;',
+      };
+      const reg = /[&<>"'/]/ig;
+      return string.replace(reg, (match)=>(map[match]));
+    }
+
+    function appendCommentToDOM(container, comment, isPrepend) {
+      const contentHTML = `
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="opacity: 1;">
+          <div class="toast-header">
+            <span class="rounded mr-2 bg-info" style="width: 15px; height: 15px;"></span>
+            <strong class="mr-auto">${escape(comment.nickname)}</strong>
+          </div>
+          <div class="toast-body">
+            ${escape(comment.content)}
+          </div>
+        </div>
+      `;
+      if (isPrepend) {
+        container.prepend(contentHTML);
+      } else {
+        container.append(contentHTML);
+      }
+    }
+
+
+    $.ajax({
+      type: 'GET',
+      url: `api_comment.php?siteKey=${siteKey}`,
+      success: function(data) {
+        if(!data.ok) {
+          alert(data.message);
+          return;
+        }
+
+        currentId = data.discussion[data.discussion.length - 1].id;
+        const comments = data.discussion;
+        for (comment of comments) {
+          appendCommentToDOM($('.comments'), comment, false);
+        }
+        $('.comments').append(LoadMoreButtonHtml);
+      }
+    });
+
+    $('.comments').on("click", ".load_more", () => {
+      $('.load_more').hide();
+
+      $.ajax({
+        type: 'GET',
+        url: `api_comment.php?siteKey=${siteKey}&before=${currentId}`,
+        success: function(data) {
+          if(!data.ok) {
+            alert(data.message);
+            return;
+          }
+          currentId = data.discussion[data.discussion.length - 1].id;
+
+          const comments = data.discussion;
+          for (comment of comments) {
+            appendCommentToDOM($('.comments'), comment, false);
+          }
+          if (currentId > 1) {
+            $('.comments').append(LoadMoreButtonHtml);
+          }
+        }
+      })
+    })
+
+    $('.add_comment_form').submit(e => {
+      e.preventDefault();
+      const newComment = {
+        'siteKey' : siteKey,
+        'nickname' : $('input[name=nickname').val(),
+        'content' : $('textarea[name=content').val()
+      }
+
+      $.ajax({
+        type: 'POST',
+        url: 'api_add_comment.php',
+        data: newComment
+      }).done(function(data) {
+        if(!data.ok){
+          alert(data.message);
+          return;
+        }
+        $('input[name=nickname').val('');
+        $('textarea[name=content').val('');
+        appendCommentToDOM($('.comments'), newComment, true);
+      });
+    });
+  </script>
+</body>
+</html>
