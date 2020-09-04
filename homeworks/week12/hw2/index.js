@@ -53,6 +53,10 @@ $('.clear_completed').click((e) => {
   todo.clearCompleted();
 });
 
+$('.save_btn').click((e) => {
+  todo.saveTodo();
+});
+
 function escape(str) {
   return str
     .replace(/&/g, '&amp;')
@@ -76,7 +80,7 @@ class TodoList {
     this.cb_id = 1;
     this.countAll = 0;
     this.countActive = 0;
-    this.countComplete = 0;
+    this.countCompleted = 0;
     this.filterKind = 'showAll';
     this.todoRepository = [{
       cb_id: 0,
@@ -88,20 +92,40 @@ class TodoList {
 
   init(id) {
     if (id) {
-      this.checkId(id);
       this.getTodoById(id);
     }
     this.showAllTodo();
   }
 
-  checkId(id) {
-    // 檢查是否為合理的 id
-    console.log(id);
-  }
-
   getTodoById(id) {
-    // 串 api 取得資料，並且把 countAll, countActive, countComplete 都設定好
-    console.log(id);
+    if (!id) return;
+    $.ajax({
+      type: 'POST',
+      url: './get_todo.php',
+      data: {
+        id: Number(id),
+      },
+    })
+      .done((res) => {
+        if (res.status === 'fail') {
+          alert(`${res.message}`);
+          return;
+        }
+        let data;
+        try {
+          data = JSON.parse(res.result.content);
+        } catch (e) {
+          console.log(e);
+        }
+        this.countAll = Number(res.result.all);
+        this.countActive = Number(res.result.active);
+        this.countCompleted = Number(res.result.completed);
+        this.todoRepository = data;
+        this.render();
+      })
+      .fail((res) => {
+        console.log(res.message);
+      });
   }
 
   createTodo(str) {
@@ -199,7 +223,6 @@ class TodoList {
     if (this.filterKind === 'showCompleted') {
       todo.showCompletedTodo();
     }
-    console.log(this.todoRepository);
   }
 
   switchTodo(id) {
@@ -282,13 +305,52 @@ class TodoList {
     }
     this.countAll = temp_all;
     this.countActive = temp_active;
-    this.countComplete = temp_completed;
+    this.countCompleted = temp_completed;
     $('.todo_count strong').text(`${this.countActive}`);
+  }
+
+  saveTodo() {
+    this.render();
+    this.calc();
+    const json = JSON.stringify(this.todoRepository) || [];
+    const form = {
+      content: json,
+      all: this.countAll,
+      active: this.countActive,
+      completed: this.countCompleted,
+    };
+    $.ajax({
+      type: 'POST',
+      url: './save_todo.php',
+      data: form,
+    })
+      .done((res) => {
+        $('body').append(`
+          <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">儲存成功，您此次存檔的 ID 是 ${res.save_id}</h5>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>請記下您的 ID，在網址列後面加上 ?userID=${res.save_id} 即可訪問個人的 Todo List~</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="close_modal btn btn-primary">我知道了</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `);
+        $('.close_modal').click(() => {
+          $('.modal').remove();
+        });
+      })
+      .fail((res) => {
+        console.log('失敗： ', res.message);
+      });
   }
 }
 const todo = new TodoList(getUrlVars()['id']);
-
-/*
-每一次重建 todoRep 都把 cb_xx 序號重設，cb__xx 不用存進後端
-從後端把資料拿過來時，再重新給一次 cb_xx 編號
-*/

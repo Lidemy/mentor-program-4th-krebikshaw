@@ -205,6 +205,22 @@ body {
 }
 
 /* footer */
+.todo_count {
+  display: flex;
+  align-items: center;
+  font-weight: lighter;
+  color: $lightColor_02;
+  margin-left: 20px;
+
+  & strong {
+    margin: 5px;
+    font-weight: lighter;
+  }
+
+  & p {
+    margin: 0;
+  }
+}
 
 footer {
   display: flex;
@@ -212,20 +228,11 @@ footer {
   align-items: center;
   font-weight: lighter;
   color: $lightColor_02;
-  padding: 5px;
+  padding: 10px;
 
-  & span {
-    display: flex;
-    align-items: center;
-
-    & strong {
-      margin: 5px;
-      font-weight: lighter;
-    }
-
-    & p {
-      margin: 0;
-    }
+  & .save_btn {
+    padding: 3px 7px;
+    font-size: 18px;
   }
 
   & .filters {
@@ -254,6 +261,14 @@ footer {
     color: $lightColor_02;
   }
 
+}
+
+.modal {
+  display: unset;
+}
+
+.modal-content {
+  background: #fbf5ff;
 }
 
 

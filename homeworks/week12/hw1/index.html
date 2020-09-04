@@ -75,7 +75,7 @@
 
     $.ajax({
       type: 'GET',
-      url: `api_comment.php?siteKey=${siteKey}`,
+      url: `comment.php?siteKey=${siteKey}`,
       success: function(data) {
         if(!data.ok) {
           alert(data.message);
@@ -96,7 +96,7 @@
 
       $.ajax({
         type: 'GET',
-        url: `api_comment.php?siteKey=${siteKey}&before=${currentId}`,
+        url: `comment.php?siteKey=${siteKey}&before=${currentId}`,
         success: function(data) {
           if(!data.ok) {
             alert(data.message);
@@ -125,7 +125,7 @@
 
       $.ajax({
         type: 'POST',
-        url: 'api_add_comment.php',
+        url: 'add_comment.php',
         data: newComment
       }).done(function(data) {
         if(!data.ok){
