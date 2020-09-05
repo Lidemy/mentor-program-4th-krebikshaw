@@ -205,7 +205,6 @@ class TodoList {
   }
 
   render() {
-    window.localStorage.setItem('todoRepository', JSON.stringify(this.todoRepository));
     const temp_todo = [];
     const length = this.todoRepository.length;
     let num = 0;
@@ -230,6 +229,7 @@ class TodoList {
     if (this.filterKind === 'showCompleted') {
       todo.showCompletedTodo();
     }
+    window.localStorage.setItem('todoRepository', JSON.stringify(this.todoRepository));
   }
 
   switchTodo(id) {
