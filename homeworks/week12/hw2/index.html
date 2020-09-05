@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>week12-hw1|by krebikshaw</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 class="title">todos</h1>
+    <div class="main_inner">
+      <header class="header">
+        <input type="text" class="create_todo" placeholder="What needs to be done?" />
+      </header>
+      <section class="content">
+        <ul class="list">
+          
+        </ul>
+      </section>
+      <div class="todo_count">
+        <strong>2</strong>
+        <p>items left</p>
+      </div>
+      <footer>
+        <button class="save_btn">Save</button>
+        <ul class="filters">
+          <li>
+            <a class="showAll selected">All</a>
+          </li>
+          <li>
+            <a class="showActive">Active</a>
+          </li>
+          <li>
+            <a class="showCompleted">Completed</a>
+          </li>
+        </ul>
+        <button class="clear_completed">Clear completed</button>
+      </footer>
+    </div>
+  </div>
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
