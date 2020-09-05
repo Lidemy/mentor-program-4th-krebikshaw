@@ -93,8 +93,14 @@ class TodoList {
   init(id) {
     if (id) {
       this.getTodoById(id);
+      this.showAllTodo();
+    } else {
+      const todoData = window.localStorage.getItem('todoRepository');
+      if (todoData) {
+        this.todoRepository = JSON.parse(todoData);
+      }
+      this.showAllTodo();
     }
-    this.showAllTodo();
   }
 
   getTodoById(id) {
@@ -199,6 +205,7 @@ class TodoList {
   }
 
   render() {
+    window.localStorage.setItem('todoRepository', JSON.stringify(this.todoRepository));
     const temp_todo = [];
     const length = this.todoRepository.length;
     let num = 0;
