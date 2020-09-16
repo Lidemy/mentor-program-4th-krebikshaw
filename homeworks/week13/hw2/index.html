@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>week13-hw1|by krebikshaw</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body class="bg-light">
+  <div class="container">
+      <div class="comment-area"></div>
+  </div>
+  <script src="./dist/main.js"></script>
+  <script>
+    $(document).ready(() => {
+      commentPlugin.init({
+        siteKey: 'site_01',
+        apiUrl: 'http://localhost:8080/mentor-program-4th/homework/week13/hw2/',
+        containerSelector: '.comment-area'
+      })
+    })
+  </script>
+</body>
+</html>
