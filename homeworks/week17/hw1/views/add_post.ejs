@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>week17-hw1|by krebikshaw</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <%- include('template/navbar') %>
+    <!-- Wrapper -->
+      <div class="wrapper">
+        <!-- Main -->
+        <section class="main">
+          <div class="post">
+            <h2>發表文章</h2>
+            <form method="post" action="/add">
+              <input type="text" name="title" placeholder="請輸入文章標題">
+              <select name="category">
+                <% categorys.forEach(category => { %>
+                  <option value="<%= category.id %>"><%= category.name %></option>
+                <% }) %>
+              </select>
+              <textarea id="editor" name="content" rows="5" cols="80"></textarea>
+              <span class="strong" style="margin: 0 auto;"><!-- errorMessage --></span>
+              <div class="two__btn">
+                <input type="submit" value="送出">
+                <a href="/">返回</a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <p>Design by krebikshaw</p>
+      </footer>
+  </body>
+</html>

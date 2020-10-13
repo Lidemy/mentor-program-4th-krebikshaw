@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>week17-hw1|by krebikshaw</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../main.css" />
+  </head>
+  <body>
+    <%- include('template/navbar') %>
+    <!-- Wrapper -->
+      <div class="wrapper">
+        <!-- Main -->
+        <section class="main">
+          <div class="main__inner">
+            <div class="heading">
+              <div class="avatar"><img/></div>
+              <div class="info">
+                <h2><%= posts.User.nickname %></h2>
+                <hr>
+                <ul class="heading__list">
+                  <% if (username) { %>
+                    <li><a class="add_post_btn" href="add_post.php">發表文章</a></li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+            <div class="card" style="margin-top: 80px;">
+              <div class="post__title">
+                <a href="post.php?id=<!-- echo htmlspecialchars($id) -->"><h2><%= posts.title %></h2></a>
+                <% if (username) { %>
+                  <div class="option__btn">
+                    <a href="/update/<%= posts.id %>">編輯</a>
+                    <a href="/delete/<%= posts.id %>">刪除</a>
+                  </div>
+                <% } %>
+              </div>
+              <hr> 
+              <div class="post__content">
+                <p><%= posts.content %></p>
+              </div>
+              <div>
+                <ul class="post__info">
+                  <li><img/></li>
+                  <li><%= posts.User.nickname %></li>
+                  <li><!-- echo htmlspecialchars($post[0]['updated_at']?$post[0]['updated_at']:$post[0]['created_at']) --></li>
+                </ul>
+              </div>
+            </div>
+            <div class="two__btn">
+              <a href="<%= req.header('Referer'); %>">返回</a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <p>Design by krebikshaw</p>
+      </footer>
+  </body>
+</html>
