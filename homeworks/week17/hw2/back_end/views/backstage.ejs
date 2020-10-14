@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>week17-hw2|by krebikshaw</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+	<div class="d-flex vh-100 align-items-center ">
+		<div class="container">
+		  <div class="row">
+		    <div class="col">
+		    </div>
+		    <div class="col-12">
+		    	<h3 class="text-secondary mb-3">Prize API 後台管理系統</h3>
+		      <table class="table table-sm shadow p-3 mb-5 bg-white rounded">
+		        <thead>
+		          <tr>
+		            <th scope="col">#</th>
+		            <th scope="col">Name</th>
+		            <th scope="col">Description</th>
+		            <th scope="col">ImageURL</th>
+		            <th scope="col">Probability</th>
+		            <th scope="col">Option</th>
+		          </tr>
+		        </thead>
+		        <% prizes.forEach(prize => { %>
+		        <tbody>
+		          <tr>
+		            <th scope="row"><%= prize.id %></th>
+		            <td><%= prize.name %></td>
+		            <td><%= prize.description %></td>
+		            <td><%= prize.imageURL %></td>
+		            <td><%= prize.probability %><span>%</span></td>
+		            <td class="d-flex">
+		            	<a href="/update/<%= prize.id %>"><button type="button" class="btn btn-primary">編輯</button></a>
+		            	<a href="/delete/<%= prize.id %>"><button type="button" class="btn btn-danger">刪除</button></a>
+		            </td>	
+		          </tr>
+		        <% }) %>
+		        </tbody>
+		      </table>
+		      <ul class="nav justify-content-center">
+		        <li class="nav-item">
+		          <a class="nav-link active" href="/add">新增品項</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link text-danger" href="/logout" tabindex="-1" aria-disabled="true">登出</a>
+		        </li>
+		      </ul>
+		    </div>
+		    <div class="col">
+		    </div>
+		  </div>
+		</div>
+	</div> 
+</body>
+</html>
