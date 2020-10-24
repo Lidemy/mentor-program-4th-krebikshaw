@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>week17-hw1|by krebikshaw</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../main.css" />
+  </head>
+  <body>
+    <%- include('template/navbar') %>
+    <!-- Wrapper -->
+      <div class="wrapper">
+        <!-- Main -->
+        <section class="main">
+          <div class="post">
+            <h2>編輯文章</h2>
+            <form method="post" action="/update/<%= posts.id %>">
+              <input type="hidden" name="post_id" value="<%= posts.id %>">
+              <input type="text" name="title" value="<%= posts.title %>">
+              <select name="category">
+                <% categorys.forEach(category => { %>
+                  <% if (category.id === posts.CategoryId) { %>
+                    <option selected="" value="<%= category.id %>"><%= category.name %></option>
+                  <% } else { %>
+                    <option value="<%= category.id %>"><%= category.name %></option>
+                  <% } %>
+                <% }) %>
+              </select>
+              <textarea id="editor" name="content" rows="5" cols="80"><%= posts.content %></textarea>
+              <span class="strong" style="margin: 0 auto;"><!-- echo $msg --></span>
+              <div class="two__btn">
+                <input type="submit" value="送出">
+                <a href="<%= req.header('Referer'); %>">返回</a>
+              </div>
+              <input type="hidden" name="page" value="<!-- echo $_SERVER['HTTP_REFERER'] -->">
+            </form>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <p>Design by krebikshaw</p>
+      </footer>
+  </body>
+</html>

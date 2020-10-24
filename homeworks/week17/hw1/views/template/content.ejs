@@ -1,0 +1,45 @@
+<!--
+  $post = getAllPost($limit, $offset);
+-->
+
+<div class="main__inner">
+  <div class="heading">
+    <div class="avatar"><img/></div>
+    <div class="info">
+      <h2><%= posts[0].User.nickname %></h2>
+      <hr>
+      <ul class="heading__list">
+        <% if (username) { %>
+          <li><a class="add_post_btn" href="/add">發表文章</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <% posts.forEach(post => { %>
+      <div class="card">
+        <div class="post__title">
+          <a href="/post/<%= post.id %>"><h2><%= post.title %></h2></a>
+          <% if (username) { %>
+            <div class="option__btn">
+              <a href="/update/<%= post.id %>">編輯</a>
+              <a href="/delete/<%= post.id %>">刪除</a>
+            </div>
+          <% } %>
+        </div>
+        <hr> 
+        <div class="post__content">
+          <p><%= post.content %></p>
+        </div>
+        <div>
+          <ul class="post__info">
+            <li><img/></li>
+            <li><%= post.User.nickname %></li>
+            <li class="read__more__btn"><a href="/post/<%= post.id %>">Read more</a></li>
+          </ul>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>week17-hw2|by krebikshaw</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+	<div class="d-flex vh-100 align-items-center">
+		<div class="container">
+		  <div class="row">
+		    <div class="col">
+		    </div>
+		    <div class="col-6">
+		      <form method="post" action="/update/<%= prize.id %>" class="shadow p-3 mb-5 bg-white rounded">
+		      	<h4 class="mb-3">編輯品項</h4>
+		        <div class="form-group">
+		          <label for="prizeName">獎項名稱</label>
+		          <input type="text" name="name" class="form-control" id="prizeName" value="<%= prize.name %>">
+		        </div>
+		        <div class="form-group">
+		          <label for="prizeDescription">獎項說明</label>
+		          <input type="text" name="description" class="form-control" id="prizeDescription" value="<%= prize.description %>">
+		        </div>
+		        <div class="form-group">
+		          <label for="prizeImageUrl">圖片網址</label>
+		          <input type="text" name="imageURL" class="form-control" id="prizeImageUrl" value="<%= prize.imageURL %>">
+		        </div>
+		        <div class="form-group">
+		          <label for="prizeProbability">抽獎機率</label>
+		          <input type="text" name="probability" class="form-control" id="prizeProbability" value="<%= prize.probability %>">
+		        </div>
+		        <% if (errorMessage && errorMessage.length > 0) { %>
+		          <h4 class="text-danger"><%= errorMessage %></h4>
+		        <% } %>
+		        <div class="d-flex">
+		          <button type="submit" class="btn btn-primary">確認</button>
+		          <a class="nav-link text-danger" href="/backstage" tabindex="-1" aria-disabled="true">返回</a>
+		        </div>
+		      </form>
+		    </div>
+		    <div class="col">
+		    </div>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>
