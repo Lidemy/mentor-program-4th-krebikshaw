@@ -1,27 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Todo from './todo';
+import GoogleForm from './page'
 import { ThemeProvider } from 'styled-components';
 
 const theme = {
   colors: {
-    title_primary: 'rgba(175, 47, 47, 0.15)',
-    text_primary: '#4d4d4d'
+    text_primary: '#4d4d4d',
+    error_message: '#d93025'
   },
   bg_colors: {
-    bg_primary: '#fff'
+    bg_primary: '#e2f3ce'
   },
   font_size: {
-    title: '6rem',
-    text: '1.4rem',
-    input: '1.5rem'
+    header: '2rem',
+    text: '0.4rem',
+    title: '1rem'
   },
 };
 
 ReactDOM.render(
   <ThemeProvider theme={ theme }>
-    <Todo />
-  </ThemeProvider>
-  ,
+    <GoogleForm />
+  </ThemeProvider>,
   document.getElementById('root')
 );
