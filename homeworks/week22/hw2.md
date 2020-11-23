@@ -14,7 +14,7 @@ useContext
 
 #### 額外的 Hook
 useReducer
-  * useState 的替代方案，能自訂邏輯，在不同的條件下時對資料做不同的變化
+  * useState 的替代方案，能在不同的條件下制定資料的變化方式，當有多種行為對應到同筆資料的時候適合使用
 useCallback
   * 可以記住 Object 的記憶體位址，就可以避免父元件重新渲染後，Object 被重新分配記憶體位址
 useMemo
